@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceToThings — Conectar Conta</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #e0e0e0;
+        }
+        .card {
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 20px;
+            padding: 40px 32px;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .logo svg {
+            width: 64px;
+            height: 64px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #a0aec0;
+            margin-bottom: 28px;
+            line-height: 1.5;
+        }
+        .help-section {
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        .help-section h3 {
+            font-size: 0.85rem;
+            color: #60a5fa;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .help-section ol {
+            padding-left: 20px;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #cbd5e1;
+        }
+        .help-section ol li { margin-bottom: 4px; }
+        .help-section code {
+            background: rgba(255,255,255,0.1);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #e2e8f0;
+        }
+        input[type="email"], input[type="text"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.06);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+        }
+        input::placeholder { color: #64748b; }
+        .error-msg {
+            color: #f87171;
+            font-size: 0.85rem;
+            margin-top: 6px;
+            display: none;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(59,130,246,0.35);
+        }
+        button:active { transform: translateY(0); }
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        .error-page {
+            text-align: center;
+            display: none;
+        }
+        .error-page h2 { color: #f87171; margin-bottom: 12px; }
+        .error-page p { color: #a0aec0; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Logo -->
+        <div class="logo">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="64" height="64" rx="16" fill="#3b82f6"/>
+                <path d="M18 32L28 42L46 22" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <!-- Form page -->
+        <div id="formPage">
+            <h1>Conectar ao Things</h1>
+            <p class="subtitle">
+                Para que a skill funcione, conecte seu email do
+                <strong>Mail to Things</strong> da Cultured Code.
+            </p>
+
+            <div class="help-section">
+                <h3>Como encontrar seu email</h3>
+                <ol>
+                    <li>Abra o <strong>Things 3</strong> no Mac, iPhone ou iPad</li>
+                    <li>V&aacute; em <strong>Ajustes &rarr; Things Cloud &rarr; Mail to Things</strong></li>
+                    <li>Copie o endere&ccedil;o que termina em <code>@things.email</code></li>
+                </ol>
+            </div>
+
+            <form id="authForm">
+                <label for="thingsEmail">Seu email do Things</label>
+                <input
+                    type="text"
+                    id="thingsEmail"
+                    name="thingsEmail"
+                    placeholder="add-to-things-xxxx@things.email"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                    required
+                />
+                <div class="error-msg" id="errorMsg"></div>
+                <button type="submit">Conectar conta</button>
+            </form>
+
+            <p class="footer">
+                VoiceToThings &mdash; Adicione tarefas ao Things pela Alexa
+            </p>
+        </div>
+
+        <!-- Error page (shown if OAuth params are missing) -->
+        <div id="errorPage" class="error-page">
+            <h2>Link inv&aacute;lido</h2>
+            <p>
+                Esta p&aacute;gina deve ser aberta pelo app da Alexa durante o processo
+                de vincula&ccedil;&atilde;o de conta.<br><br>
+                Abra o app Alexa &rarr; sua skill &rarr; <strong>Vincular Conta</strong>.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Parse OAuth parameters from URL
+        var params = new URLSearchParams(window.location.search);
+        var redirectUri = params.get('redirect_uri');
+        var state = params.get('state');
+        var clientId = params.get('client_id');
+
+        // If essential OAuth params are missing, show error
+        if (!redirectUri || !state) {
+            document.getElementById('formPage').style.display = 'none';
+            document.getElementById('errorPage').style.display = 'block';
+        }
+
+        document.getElementById('authForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var email = document.getElementById('thingsEmail').value.trim().toLowerCase();
+            var errorMsg = document.getElementById('errorMsg');
+
+            // Validate Things email format
+            if (!email.endsWith('@things.email')) {
+                errorMsg.textContent = 'O email deve terminar em @things.email';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            if (email.length < 20) {
+                errorMsg.textContent = 'Este email parece incompleto. Verifique no app Things.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            errorMsg.style.display = 'none';
+
+            // Encode the Things email as the access token (base64)
+            var accessToken = btoa(email);
+
+            // Build redirect URL with fragment (Implicit Grant flow)
+            var redirect = redirectUri
+                + '#state=' + encodeURIComponent(state)
+                + '&access_token=' + encodeURIComponent(accessToken)
+                + '&token_type=Bearer';
+
+            // Redirect back to Alexa
+            window.location.href = redirect;
+        });
+    </script>
+</body>
+</html>
