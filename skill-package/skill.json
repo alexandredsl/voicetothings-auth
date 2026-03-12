@@ -1,0 +1,39 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "pt-BR": {
+          "name": "Adicionar Tarefa",
+          "summary": "Adicione tarefas ao seu inbox usando sua voz.",
+          "description": "Diga o nome de uma tarefa e ela será adicionada ao seu inbox instantaneamente.",
+          "examplePhrases": [
+            "Alexa, adicionar tarefa ao things",
+            "adicionar comprar leite",
+            "criar ligar para o dentista"
+          ],
+          "keywords": ["things3", "tarefas", "produtividade", "to-do"]
+        }
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "Ative o skill e diga: Alexa, adicionar tarefa ao things",
+      "distributionCountries": ["BR"],
+      "distributionMode": "PRIVATE",
+      "category": "PRODUCTIVITY_AND_UTILITIES"
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda"
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false
+    }
+  }
+}

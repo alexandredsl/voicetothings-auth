@@ -1,0 +1,60 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "adicionar tarefa ao things",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": [
+            "sim",
+            "confirmar",
+            "pode adicionar",
+            "isso mesmo",
+            "correto"
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": [
+            "não",
+            "errado",
+            "cancela",
+            "não é isso"
+          ]
+        },
+        {
+          "name": "AddTaskIntent",
+          "slots": [
+            {
+              "name": "taskName",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "adicionar {taskName}",
+            "adicionar tarefa {taskName}",
+            "criar {taskName}",
+            "criar tarefa {taskName}",
+            "colocar {taskName}",
+            "a tarefa é {taskName}",
+            "quero adicionar {taskName}",
+            "lembrar de {taskName}"
+          ]
+        }
+      ],
+      "types": []
+    }
+  }
+}

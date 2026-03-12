@@ -1,0 +1,11 @@
+{
+  "name": "alexa-skill-voicetothings",
+  "version": "1.0.0",
+  "description": "Alexa skill para adicionar tarefas ao Things3 via voz",
+  "main": "index.js",
+  "dependencies": {
+    "ask-sdk-core": "^2.14.0",
+    "ask-sdk-model": "^1.86.0",
+    "nodemailer": "^6.9.0"
+  }
+}
