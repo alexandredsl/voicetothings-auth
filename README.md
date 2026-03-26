@@ -8,11 +8,7 @@ Skill pessoal que adiciona tarefas ao inbox do Things3 por voz, usando Mail-to-T
 Usuário fala → Alexa NLU → Lambda (Alexa-Hosted) → Nodemailer/Gmail → @things.email → Things3
 ```
 
-## Pré-requisitos (configuração única)
 
-### ✅ Mail to Things — já configurado
-
-Endereço: `add-to-things-cqygplkx6be8e9l17nap9@things.email`
 
 ### Gmail App Password — já gerado
 
@@ -29,7 +25,6 @@ Configurar na aba **Code** do Alexa Developer Console:
 
 | Variável             | Valor                                              |
 |----------------------|----------------------------------------------------|
-| `THINGS_EMAIL`       | `add-to-things-cqygplkx6be8e9l17nap9@things.email` |
 | `GMAIL_USER`         | Seu endereço Gmail remetente                       |
 | `GMAIL_APP_PASSWORD` | App Password gerado no Google (16 caracteres)      |
 
